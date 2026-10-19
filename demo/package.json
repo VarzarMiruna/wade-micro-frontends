@@ -1,0 +1,12 @@
+{
+  "name": "feed-me-demo",
+  "private": true,
+  "description": "Runs the container and the three micro frontends together on localhost",
+  "scripts": {
+    "install:all": "npm --prefix container install && npm --prefix browse install && npm --prefix restaurant install && npm --prefix profile install",
+    "start": "concurrently -n container,browse,restaurant,profile -c yellow,blue,green,magenta \"npm --prefix container run dev\" \"npm --prefix browse run serve\" \"npm --prefix restaurant run serve\" \"npm --prefix profile run serve\""
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "feed-me-profile",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite build && vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}

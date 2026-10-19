@@ -1,0 +1,8 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "Timing-Allow-Origin", "value": "*" }]
+    }
+  ]
+}

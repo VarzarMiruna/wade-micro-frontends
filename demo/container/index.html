@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed me · Micro Frontends demo</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23ea580c'/></svg>" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <!-- Everything outside the three mount points belongs to the container -->
+    <header class="header mfe" id="container-header">
+      <a class="logo" href="/">Feed me</a>
+      <span class="tagline">One website, many teams</span>
+      <div class="cart" id="cart" aria-live="polite">
+        Cart · <span data-count>0 items</span> · <span data-total>0</span> RON
+      </div>
+    </header>
+
+    <main class="layout">
+      <div class="mfe" id="browse-root"><p class="loading">Loading Browse…</p></div>
+      <div class="mfe" id="restaurant-root"><p class="loading">Loading Restaurant…</p></div>
+      <aside class="mfe" id="profile-root"><p class="loading">Loading Profile…</p></aside>
+    </main>
+
+    <demo-panel></demo-panel>
+  </body>
+</html>

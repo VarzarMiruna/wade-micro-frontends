@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile · standalone</title>
+    <style>
+      body { margin: 0; padding: 32px 16px; background: #faf7f2; font: 17px/1.5 system-ui, sans-serif; }
+      #root { max-width: 340px; margin: 0 auto; }
+    </style>
+  </head>
+  <body>
+    <!-- Team Profile can run its app alone, without the container -->
+    <div id="root"></div>
+    <script type="module">
+      import './src/main.js';
+      window.renderProfile('root');
+    </script>
+  </body>
+</html>
