@@ -1,8 +1,5 @@
 import { apps, downApps } from './config.js';
 
-// The buttons used during the presentation. Not part of the shop itself.
-// It lives in Shadow DOM, so bad CSS from the teams cannot break it either.
-
 const releases = {
   v1: { label: 'v1', hint: 'Each team’s CSS stays inside its own box.' },
   leaky: { label: 'v2 · global', hint: 'Browse ships a global .button rule: the Restaurant buttons break too. Profile is safe thanks to Shadow DOM.' },
@@ -143,7 +140,6 @@ class DemoPanel extends HTMLElement {
         </div>
       </details>`;
 
-    // Open on large screens, closed on phones
     shadow.querySelector('details').open = matchMedia('(min-width: 600px)').matches;
 
     shadow.querySelector('[data-boundaries]').addEventListener('change', (event) => {
@@ -155,7 +151,6 @@ class DemoPanel extends HTMLElement {
         const release = button.dataset.release;
         shadow.querySelectorAll('[data-release]').forEach((b) => b.setAttribute('aria-pressed', b === button));
         shadow.querySelector('.hint').textContent = releases[release].hint;
-        // Simulates Team Browse deploying a new version of its CSS
         window.dispatchEvent(new CustomEvent('demo:browse-release', { detail: { release } }));
       });
     });
@@ -173,7 +168,6 @@ class DemoPanel extends HTMLElement {
       location.assign(location.pathname);
     });
 
-    // Keyboard shortcuts, so the panel can stay closed during the talk
     const releaseButtons = [...shadow.querySelectorAll('[data-release]')];
     window.addEventListener('keydown', (event) => {
       if (event.target.closest?.('input, textarea') || event.ctrlKey || event.metaKey || event.altKey) return;

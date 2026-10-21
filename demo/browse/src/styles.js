@@ -1,4 +1,3 @@
-// Team Browse prefixes its classes with "browse__" (BEM naming), so they cannot clash
 export const baseCss = `
   .browse { background: #fff; border: 1px solid #e7e5e4; border-radius: 16px; padding: 20px; }
   .browse__title { margin: 0 0 14px; font-size: 1.25rem; }
@@ -19,7 +18,6 @@ export const baseCss = `
   .browse__info small { color: #78716c; font-size: 0.9rem; }
 `;
 
-// The filter chips use the generic class ".button". So does Team Restaurant.
 const calmButtons = `
   .button {
     background: #fff; color: #1c1917; border: 1px solid #d6d3d1; border-radius: 999px;
@@ -29,7 +27,6 @@ const calmButtons = `
   .button[aria-pressed='true'] { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
 `;
 
-// Release v2: a bold new look for the chips
 const loudButtons = `
   .button {
     background: #e11d48; color: #fff; border: 3px solid #111; border-radius: 0;
@@ -41,7 +38,7 @@ const loudButtons = `
 `;
 
 export function buttonCss(release) {
-  if (release === 'leaky') return loudButtons; // global: hits every .button on the page
+  if (release === 'leaky') return loudButtons;
   if (release === 'scoped') return `@scope (.browse) { ${loudButtons} }`;
   return `@scope (.browse) { ${calmButtons} }`;
 }

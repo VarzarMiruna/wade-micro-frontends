@@ -1,5 +1,3 @@
-// Team Restaurant uses "restaurant__" classes, but its buttons use the generic ".button".
-// Nobody told them Team Browse uses ".button" too...
 export const css = `
   .restaurant { background: #fff; border: 1px solid #e7e5e4; border-radius: 16px; padding: 20px; }
   .restaurant__empty { display: grid; justify-items: center; gap: 4px; padding: 56px 16px; color: #78716c; text-align: center; }

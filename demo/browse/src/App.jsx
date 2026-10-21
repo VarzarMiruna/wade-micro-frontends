@@ -3,8 +3,6 @@ import { cuisines, restaurants } from './data.js';
 
 const readSelected = () => new URLSearchParams(location.search).get('restaurant');
 
-// Browse does not talk to Restaurant directly. It only changes the URL,
-// and every app that cares reads the URL. The URL is the contract.
 function openRestaurant(event, id) {
   event.preventDefault();
   const url = new URL(location.href);

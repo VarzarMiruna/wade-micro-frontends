@@ -1,6 +1,3 @@
-// Team Profile: a Web Component (custom element) with Shadow DOM.
-// Styles inside the shadow root cannot leak out, and outside styles cannot get in.
-
 const addresses = ['FII, Str. General Berthelot 16', 'Palas Mall, Str. Palas 7A', 'Copou Park, Bd. Carol I'];
 
 const css = `
@@ -20,7 +17,6 @@ const css = `
   }
   .box p { color: #1c1917; }
 
-  /* Same class name as the other teams. Here it is safe. */
   .button {
     background: #9333ea; color: #fff; border: 1px solid #9333ea; border-radius: 10px;
     padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer;
@@ -71,7 +67,6 @@ class ProfileCard extends HTMLElement {
       shadow.querySelector('[data-address]').textContent = addresses[this.#address];
     });
 
-    // Profile hears the same 'cart:add' event as the container. No shared store.
     window.addEventListener('cart:add', this.#onCartAdd);
   }
 
@@ -84,7 +79,6 @@ if (!customElements.get('mfe-profile')) {
   customElements.define('mfe-profile', ProfileCard);
 }
 
-// The contract with the container: render into an element, and clean up after
 window.renderProfile = (containerId) => {
   document.getElementById(containerId).replaceChildren(document.createElement('mfe-profile'));
   return { tech: 'Web Component', version: __APP_VERSION__, builtAt: __BUILD_TIME__ };

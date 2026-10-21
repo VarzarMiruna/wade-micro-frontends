@@ -2,7 +2,6 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import { menus } from './menus.js';
 
-// Which restaurant to show comes from the URL, set by Team Browse
 const readSelected = () => new URLSearchParams(location.search).get('restaurant');
 const selectedId = ref(readSelected());
 const restaurant = computed(() => menus[selectedId.value]);
@@ -12,7 +11,6 @@ const onRouteChange = () => (selectedId.value = readSelected());
 onMounted(() => window.addEventListener('popstate', onRouteChange));
 onUnmounted(() => window.removeEventListener('popstate', onRouteChange));
 
-// Tell whoever is listening (the container, Profile) that a dish was added
 function addToCart(dish) {
   window.dispatchEvent(
     new CustomEvent('cart:add', { detail: { id: dish.id, name: dish.name, price: dish.price } }),

@@ -1,5 +1,3 @@
-// Where each micro frontend lives. The container only knows these URLs,
-// it does not have the other apps' code.
 const isLocal = ['localhost', '127.0.0.1'].includes(location.hostname);
 
 export const apps = [
@@ -26,7 +24,6 @@ export const apps = [
   },
 ];
 
-// The demo panel can "take an app down" by adding ?down=Browse to the URL
 export function downApps() {
   return new URLSearchParams(location.search).getAll('down');
 }

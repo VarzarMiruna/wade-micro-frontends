@@ -4,7 +4,6 @@ import { css } from './styles.js';
 
 const apps = new Map();
 
-// The contract with the container: render into an element, and clean up after
 window.renderRestaurant = (containerId) => {
   if (!document.getElementById('restaurant-styles')) {
     const tag = document.createElement('style');

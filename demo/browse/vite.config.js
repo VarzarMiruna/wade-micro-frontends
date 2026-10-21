@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// The build produces ONE file, dist/main.js, that the container loads with a <script> tag
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
   define: {

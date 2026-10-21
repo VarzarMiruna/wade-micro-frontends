@@ -1,9 +1,6 @@
-// Photos live in public/images and are deployed with this app, not with the container.
-// The container loads us from another origin, so build the URL from our own script tag.
 const assetBase = document.currentScript ? new URL('.', document.currentScript.src).href : '/';
 const photo = (id) => `${assetBase}images/${id}.jpg`;
 
-// Team Restaurant owns its own data. The ids match the ones in the URL.
 export const menus = {
   'pizza-copou': {
     name: 'Pizza Copou',

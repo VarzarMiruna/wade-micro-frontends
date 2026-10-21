@@ -12,13 +12,11 @@ function applyStyles(release = 'v1') {
     tag.id = 'browse-styles';
   }
   tag.textContent = baseCss + buttonCss(release);
-  document.head.append(tag); // last in <head>, so it wins ties with other teams' CSS
+  document.head.append(tag);
 }
 
-// The demo panel simulates Team Browse deploying a new version of its CSS
 window.addEventListener('demo:browse-release', (event) => applyStyles(event.detail.release));
 
-// The contract with the container: render into an element, and clean up after
 window.renderBrowse = (containerId) => {
   applyStyles();
   const root = createRoot(document.getElementById(containerId));

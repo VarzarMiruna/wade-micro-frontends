@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
-// The build produces ONE file, dist/main.js, that the container loads with a <script> tag
 export default defineConfig(({ mode }) => ({
   plugins: [vue()],
   define: {

@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 
-// No framework: only browser standards. Vite just bundles it into dist/main.js
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
